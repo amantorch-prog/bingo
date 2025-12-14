@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Bingo Mini App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="top-bar">
+  <div>🏆 <span id="prize">0</span></div>
+  <div>💰 <span id="balance">0</span></div>
+  <div>📞 <span id="called-count">0</span></div>
+  <div>🎟 <span id="stake">5</span></div>
+</div>
+
+<!-- BUY PHASE -->
+<div id="buy-phase" class="modal">
+  <h2>Buy Bingo Cards</h2>
+  <div id="timer">20</div>
+  <button onclick="openBoard()">Open Bingo Board</button>
+</div>
+
+<!-- BINGO BOARD -->
+<div id="board" class="modal hidden">
+  <h3>Select Card</h3>
+  <div id="board-grid"></div>
+  <button onclick="closeBoard()">Close</button>
+</div>
+
+<!-- MAIN GAME -->
+<div id="game" class="hidden">
+  <div id="left">
+    <table id="called-table"></table>
+  </div>
+
+  <div id="right">
+    <div id="recent-calls"></div>
+    <table id="card-table"></table>
+    <button id="bingo-btn" onclick="claimBingo()">BINGO</button>
+  </div>
+</div>
+
+<!-- WIN POPUP -->
+<div id="winner-popup" class="modal hidden"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
